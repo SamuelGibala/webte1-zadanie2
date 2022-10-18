@@ -1,0 +1,73 @@
+body{
+    background-color: rgb(128, 164, 169);
+    font-family: "Comic Sans MS" , serif;
+    line-height: 1.8;
+}
+
+h1{
+    font-size: 80px;
+}
+
+h2{
+    font-size: 40px
+}
+
+h3{
+    font-size: 30px;
+}
+
+h4{
+    font-size: 20px;
+    padding: 0 0 20px 0;
+}
+
+hgroup{
+    text-align: center;
+    color: rgb(65,65,65);
+}
+
+.core{
+    width: 70%;
+    margin: 0 15%;
+    padding: 20px;
+    background-color: rgb(133, 131, 131);
+    border-radius: 15px;
+    color: rgb(255,255,255);
+}
+
+input{
+    background-color: rgb(128, 164, 169);
+    border-radius: 5px;
+}
+
+.gender{
+    accent-color: black;
+}
+header{
+
+}
+
+footer{
+
+    text-align: center;
+    margin: 50px 0 0 0;
+    padding: 15px;
+    background-color: rgb(51,51,51);;
+    color: rgb(255,255,255);
+    position: relative;
+    bottom: 0;
+    clear: both;
+    border-radius: 10px;
+}
+
+#czech, #austria, #kosice, #viena, #graz, #prague, #brno, #shelf1, #shelf2, #differentText{
+    display: none;
+}
+
+#warnAge, #warnDate, #warnMail, #warnName, #warnSurname, #warnPhone{
+    visibility: hidden;
+}
+
+::placeholder{
+    color: rgb(52, 52, 52);
+}
