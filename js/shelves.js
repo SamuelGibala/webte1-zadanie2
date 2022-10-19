@@ -28,9 +28,9 @@ selectedItem3.onchange = function (){
 
 document.getElementById('different').onchange = function (){
     if(this.checked){
-        show('differentText');
+        show('differentTextArea');
     }else{
-        hide('differentText');
+        hide('differentTextArea');
     }
 }
 
