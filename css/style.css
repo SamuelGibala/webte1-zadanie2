@@ -71,3 +71,8 @@ footer{
 ::placeholder{
     color: rgb(52, 52, 52);
 }
+
+.warning{
+    font-size: 12px;
+    color: red;
+}

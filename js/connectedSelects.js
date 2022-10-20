@@ -22,6 +22,8 @@ for (let i = 0; i < country.length; i++) {
         arrCity.forEach(function (element) {
             element.style.display = 'none';
         });
+
         document.getElementById(country.item(i).value).style.display = 'inline';
     }
 }
+

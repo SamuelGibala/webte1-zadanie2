@@ -5,6 +5,7 @@
     <title>Formular</title>
 
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/modal.css">
 </head>
 <body>
 
@@ -14,9 +15,13 @@
     </hgroup>
 </header>
 
+
 <div class="core">
 
     <form action="" method="post" onsubmit="return chcecker()">
+
+        <div id="myModal"></div>
+
         <label for="name" > Meno:</label><br>
         <input type="text" id="name" placeholder="Krstné meno"><br>
         <div class="warning" id="warnName"></div><br>
@@ -27,9 +32,9 @@
 
         <label>
             Pohlavie: <br>
-            <input type="radio" class="gender" name="gender" value="M" checked="checked"> Muž&nbsp;
-            <input type="radio" class="gender" name="gender" value="F"> Žena&nbsp;
-            <input type="radio" class="gender" name="gender" value="D"> Neuvádzať <br>
+            <input type="radio" class="gender" name="gender" value="Muž" checked="checked"> Muž&nbsp;
+            <input type="radio" class="gender" name="gender" value="Žena"> Žena&nbsp;
+            <input type="radio" class="gender" name="gender" value="Neuvedené"> Neuvádzať <br>
         </label>
 
         <label for="age">Vek:</label><br>
@@ -150,8 +155,9 @@
 
         </div>
 
-        <input type="submit" value="submit">
+        <div class="modalWindow"></div>
 
+        <input type="button" value="stlac" id="openBtn">
 
 
     </form>
@@ -173,8 +179,8 @@
 <script src="./js/connectedSelects.js"></script>
 <script src="./js/shelves.js"></script>
 <script src="./js/reqiiredFields.js"></script>
-<script src="./js/dateAge.js"></script>
 <script src="./js/textAreaCounting.js"></script>
+<script src="./js/modal.js"></script>
 
 
 </body>
