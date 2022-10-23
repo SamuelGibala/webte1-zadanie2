@@ -1,11 +1,11 @@
 body{
     background-color: rgb(128, 164, 169);
     font-family: "Comic Sans MS" , serif;
-    line-height: 1.8;
+    line-height: 1.7;
 }
 
 h1{
-    font-size: 80px;
+    font-size: 75px;
 }
 
 h2{
@@ -28,21 +28,52 @@ hgroup{
 
 .core{
     width: 70%;
+    min-width: 320px;
     margin: 0 15%;
-    padding: 20px;
+    padding: 40px;
     background-color: rgb(133, 131, 131);
     border-radius: 15px;
     color: rgb(255,255,255);
 }
 
+.core:after{
+    display: flex;
+    clear: both;
+}
+
 input{
     background-color: rgb(128, 164, 169);
     border-radius: 5px;
+    margin-top: 15px;
 }
 
-.gender{
+input[type=text], input[type=email], input[type=number], input[type=date]{
+    width: 40%;
+    min-width: 140px;
+}
+
+input[type=radio], input[type=checkbox]{
     accent-color: black;
 }
+
+.bottom{
+
+    line-height: 2;
+}
+.top{
+
+}
+
+input[type=button], input[type=submit]{
+    margin: 20px 0 0 0;
+    width: 20%;
+    text-align: center;
+    horiz-align: center;
+    font-size: large;
+    min-width: 100px;
+    padding: 5px;
+}
+
 header{
 
 }
@@ -58,6 +89,11 @@ footer{
     bottom: 0;
     clear: both;
     border-radius: 10px;
+}
+
+#czech, #austria, #kosice, #viena, #graz, #prague, #brno, #slovakia, #bratislava, #country{
+    width: 25%;
+    min-width: 100px;
 }
 
 #czech, #austria, #kosice, #viena, #graz, #prague, #brno, #shelf1, #shelf2, #differentTextArea{
@@ -76,3 +112,24 @@ footer{
     font-size: 12px;
     color: red;
 }
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+#differentText{
+    width: 200px;
+    height: 80px;
+}
+
+textarea{
+    resize: none;
+}
+

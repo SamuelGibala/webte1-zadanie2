@@ -6,6 +6,10 @@ function hide(name){
     document.getElementById(name).style.display = 'none';
 }
 
+function xor(element){
+    return element !== true;
+}
+
 let selectedItem1 = document.getElementById('opt1');
 let selectedItem2 = document.getElementById('opt2');
 let selectedItem3 = document.getElementById('opt3');

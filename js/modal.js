@@ -1,24 +1,151 @@
 let gender = document.getElementsByName("gender");
+let vehicle = document.getElementsByName("vehicle");
+let options = document.getElementsByName("box");
+let different = document.getElementById('differentText');
 
-function showGender (){
-    for(let i = 0;i<gender.length;i++){
-    if(gender[i].checked)
-        return gender[i].value;
+let vehicleArr = Array.from(vehicle);
+let optionsArr = Array.from(options);
+
+
+function showRadio (element){
+    for(let i = 0;i<element.length;i++){
+    if(element[i].checked)
+        return element[i].value;
     }
 }
 
-function showLocation (){
 
-}
+
 
 function makeSum(element){
 
-    element.innerHTML = "Meno: &nbsp" + name.value + "<br>" +
+    /*element.innerHTML = "Meno: &nbsp" + name.value + "<br>" +
                         "Priezvisko: &nbsp" + surname.value + "<br>" +
                         "Pohlavie: &nbsp" + showGender()  + "<br>" +
                         "Vek: &nbsp" + age.value + "<br>" +
                         "Tel. číslo: &nbsp" + phone.value + "<br>" +
-                        "Email: &nbsp" + mail.value + "<br>";
+                        "Email: &nbsp" + mail.value + "<br>";*/
+
+    let table = document.createElement("table");
+    let nameRow = document.createElement("tr");
+    let nameLabel = document.createElement("td");
+    let nameValue = document.createElement("td");
+    nameLabel.innerHTML = "Meno"
+    nameValue.innerHTML = name.value;
+    nameRow.appendChild(nameLabel);
+    nameRow.appendChild(nameValue);
+
+    let surnameRow = document.createElement("tr");
+    let surnameLabel = document.createElement("td");
+    let surnameValue = document.createElement("td");
+    surnameLabel.innerHTML = "Priezvisko"
+    surnameValue.innerHTML = surname.value;
+    surnameRow.appendChild(surnameLabel);
+    surnameRow.appendChild(surnameValue);
+
+    let genderRow = document.createElement("tr");
+    let genderLabel = document.createElement("td");
+    let genderValue = document.createElement("td");
+    genderLabel.innerHTML = "Pohlavie"
+    genderValue.innerHTML = showRadio(gender);
+    genderRow.appendChild(genderLabel);
+    genderRow.appendChild(genderValue);
+
+    let ageRow = document.createElement("tr");
+    let ageLabel = document.createElement("td");
+    let ageValue = document.createElement("td");
+    ageLabel.innerHTML = "Vek"
+    ageValue.innerHTML = age.value;
+    ageRow.appendChild(ageLabel);
+    ageRow.appendChild(ageValue);
+
+    let phoneRow = document.createElement("tr");
+    let phoneLabel = document.createElement("td");
+    let phoneValue = document.createElement("td");
+    phoneLabel.innerHTML = "Tel. číslo"
+    phoneValue.innerHTML = phone.value;
+    phoneRow.appendChild(phoneLabel);
+    phoneRow.appendChild(phoneValue);
+
+    let emailRow = document.createElement("tr");
+    let emailLabel = document.createElement("td");
+    let emailValue = document.createElement("td");
+    emailLabel.innerHTML = "Email"
+    emailValue.innerHTML = mail.value;
+    emailRow.appendChild(emailLabel);
+    emailRow.appendChild(emailValue);
+
+    let locationRow = document.createElement("tr");
+    let locationLabel = document.createElement("td");
+    let locationCountryValue = document.createElement("td");
+    let locationCityValue = document.createElement("td");
+    let locationPlaceValue = document.createElement("td");
+    locationLabel.innerHTML = "Štát, mesto, ulica"
+    locationCountryValue.innerHTML = countryName;
+    locationCityValue.innerHTML = cityName;
+    locationPlaceValue.innerHTML = placeName;
+    locationRow.appendChild(locationLabel);
+    locationRow.appendChild(locationCountryValue);
+    locationRow.appendChild(locationCityValue);
+    locationRow.appendChild(locationPlaceValue);
+
+    let selectRow = document.createElement("tr");
+    let selectLabel = document.createElement("td");
+    let selectValue = document.createElement("td");
+    selectLabel.innerHTML = "Požičanie";
+    selectValue.innerHTML = showRadio(vehicle);
+    selectRow.appendChild(selectLabel);
+    selectRow.appendChild(selectValue);
+
+    let optionsRow = document.createElement("tr");
+    if(!vehicle[0].checked) {
+        let optionsLabel = document.createElement("td");
+        let optionsValue = Array(6);
+        optionsLabel.innerHTML = "Doplnky";
+        optionsRow.appendChild(optionsLabel);
+        console.log(vehicleArr.indexOf(showRadio(vehicle)))
+        console.log(vehicle);
+        console.log(vehicleArr);
+        if (vehicle[1].checked) {
+            for (let i = 0; i < 3; i++) {
+                if (options[i].checked) {
+                    optionsValue[i] = document.createElement("td");
+                    if (i === 2) {
+                        optionsValue[i].innerHTML = "Iné: &nbsp" + different.value;
+                    } else {
+                        optionsValue[i].innerHTML = optionsArr[i].value;
+                    }
+                    optionsRow.appendChild(optionsValue[i]);
+                }
+            }
+        } else if (vehicle[2].checked) {
+            for (let i = 3; i < 6; i++) {
+                if (options[i].checked) {
+                    optionsValue[i] = document.createElement("td");
+                    optionsValue[i].innerHTML = optionsArr[i].value;
+                    optionsRow.appendChild(optionsValue[i]);
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+
+    table.appendChild(nameRow);
+    table.appendChild(surnameRow);
+    table.appendChild(genderRow);
+    table.appendChild(ageRow);
+    table.appendChild(phoneRow);
+    table.appendChild(emailRow);
+    table.appendChild(locationRow);
+    table.appendChild(selectRow);
+    table.appendChild(optionsRow);
+    element.appendChild(table);
+
 
 }
 

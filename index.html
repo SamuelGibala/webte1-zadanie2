@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sk">
 <head>
     <meta charset="UTF-8">
+    <meta name = "viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Formular</title>
 
     <link rel="stylesheet" href="./css/style.css">
@@ -18,146 +19,164 @@
 
 <div class="core">
 
-    <form action="" method="post" onsubmit="return chcecker()">
+    <form action=mailto:samko.gibala@gmail.com method="get" onsubmit="return chcecker()">
 
         <div id="myModal"></div>
 
-        <label for="name" > Meno:</label><br>
-        <input type="text" id="name" placeholder="Krstné meno"><br>
-        <div class="warning" id="warnName"></div><br>
-
-        <label for="surname" > Priezvisko:</label><br>
-        <input type="text" id="surname" placeholder="Priezvisko"><br>
-        <div class="warning" id="warnSurname"></div><br>
-
-        <label>
-            Pohlavie: <br>
-            <input type="radio" class="gender" name="gender" value="Muž" checked="checked"> Muž&nbsp;
-            <input type="radio" class="gender" name="gender" value="Žena"> Žena&nbsp;
-            <input type="radio" class="gender" name="gender" value="Neuvedené"> Neuvádzať <br>
-        </label>
-
-        <label for="age">Vek:</label><br>
-        <input type="number" id="age" min="1" > <br>
-        <div class="warning" id="warnAge"></div><br>
-
-        <label for="birthDate">Dátum narodenia: </label><br>
-        <input type="date" id="birthDate" ><br>
-        <div class="warning" id="warnBirthDate"></div><br>
-
-        <label for="phone" > Telefónne číslo:</label><br>
-        <input type="text" id="phone"  placeholder="+421xxxxxxxxx" ><br>
-        <div class="warning" id="warnPhone"></div><br>
-
-        <label for="mail" > Email:</label><br>
-        <input type="email" id="mail"  placeholder="example@email.com"><br>
-        <div class="warning" id="warnMail"></div><br>
-
-        <label for="country">
-            <select id="country">
-                <option value="slovakia">Slovensko</option>
-                <option value="czech">Česko</option>
-                <option value="austria">Rakúsko</option>
-            </select>
-        </label>
-
-        <label for="slovakia">
-            <select id="slovakia" class="country">
-                <option value="bratislava">Bratislava</option>
-                <option value="kosice">Košice</option>
-            </select>
-        </label>
-
-        <label for="czech">
-            <select id="czech" class="country">
-                <option value="prague">Praha</option>
-                <option value="brno">Brno</option>
-            </select>
-        </label>
-
-        <label for="austria">
-            <select id="austria" class="country">
-                <option value="viena">Viedeň</option>
-                <option value="graz">Graz</option>
-            </select>
-        </label>
-
-        <label for="bratislava">
-            <select id="bratislava" class="city">
-                <option value="airportBA">Letisko Bratislava</option>
-                <option value="patronska">Panónska cesta 3695/23</option>
-            </select>
-        </label>
-
-        <label for="kosice">
-            <select id="kosice" class="city">
-                <option value="airportKE">Letisko Košice</option>
-                <option value="ostrovskeho">Ostrovského 2333/1</option>
-            </select>
-        </label>
-
-        <label for="prague">
-            <select id="prague" class="city">
-                <option value="airportPRA">Letisko Praha</option>
-                <option value="vysehradska">Vyšehradská 1411</option>
-            </select>
-        </label>
-
-        <label for="brno">
-            <select id="brno" class="city">
-                <option value="airportBR">Letisko Brno</option>
-                <option value="mlynska">Mlýnská 333</option>
-            </select>
-        </label>
-
-        <label for="viena">
-            <select id="viena" class="city">
-                <option value="airportSCH">Letisko Viedeň</option>
-                <option value="landgutgasse">Landgutgasse 41</option>
-            </select>
-        </label>
-
-        <label for="graz">
-            <select id="graz" class="city">
-                <option value="airportGR">Letisko Graz</option>
-                <option value="bahnhofgurtel">Bahnhofgürtel 37</option>
-            </select>
-        </label>
-        <br>
-        <label>
-            Mám záujem o požičanie: <br>
-            <input type="radio" class="vehicle" name="vehicle" value="aaa" checked="checked" id="opt1">aaa &nbsp;
-            <input type="radio" class="vehicle" name="vehicle" value="bbb" id="opt2"> bbb&nbsp;
-            <input type="radio" class="vehicle" name="vehicle" value="ccc" id="opt3"> ccc <br>
-        </label>
-
-        <div id="shelf1">
-
-            <label>
-                <input type="checkbox" name="box" value="b1">option1
-                <input type="checkbox" name="box" value="b2">option2
-                <input type="checkbox" name="box" value="b3" id="different">option3
-            </label>
-            <div id="differentTextArea">
-                <label for="differentText"></label><textarea name="text1" placeholder="Tu zadajte text" id="differentText" maxlength="50"></textarea>
-                <div id="diffTextCounter">0/50</div>
+        <div class="top">
+            <div class="column">
+                <label for="name" > Meno:</label><br>
+                <input type="text" id="name" placeholder="Krstné meno"><br>
+                <div class="warning" id="warnName">&nbsp;</div><br>
             </div>
 
+            <div class="column">
+                <label for="surname" > Priezvisko:</label><br>
+                <input type="text" id="surname" placeholder="Priezvisko"><br>
+                <div class="warning" id="warnSurname">&nbsp;</div><br>
+            </div>
+
+            <div class="column">
+                <label for="age">Vek:</label><br>
+                <input type="number" id="age" min="1" > <br>
+                <div class="warning" id="warnAge">&nbsp;</div><br>
+            </div>
+
+            <div class="column">
+                <label for="birthDate">Dátum narodenia: </label><br>
+                <input type="date" id="birthDate" ><br>
+                <div class="warning" id="warnBirthDate">&nbsp;</div><br>
+            </div>
+
+            <div class="column">
+                <label for="phone" > Telefónne číslo:</label><br>
+                <input type="text" id="phone"  placeholder="+421xxxxxxxxx" ><br>
+                <div class="warning" id="warnPhone">&nbsp;</div><br>
+            </div>
+
+            <div class="column">
+                <label for="mail" > Email:</label><br>
+                <input type="email" id="mail"  placeholder="example@email.com"><br>
+                <div class="warning" id="warnMail">&nbsp;</div><br>
+            </div>
         </div>
 
-        <div id="shelf2">
 
-            <label>
-                <input type="checkbox" name="box" value="b4">option4
-                <input type="checkbox" name="box" value="b5">option5
-                <input type="checkbox" name="box" value="b6">option6
-            </label>
+            <div class="bottom">
+                <label>
+                    Pohlavie: <br>
+                    <input type="radio" class="gender" name="gender" value="Muž" checked="checked"> Muž&nbsp;
+                    <input type="radio" class="gender" name="gender" value="Žena"> Žena&nbsp;
+                    <input type="radio" class="gender" name="gender" value="Neuvedené"> Neuvádzať <br>
+                </label>
 
-        </div>
+                <label for="country">
+                    Lokalita: <br>
+                    <select id="country">
+                        <option value="slovakia">Slovensko</option>
+                        <option value="czech">Česko</option>
+                        <option value="austria">Rakúsko</option>
+                    </select>
+                </label>
 
-        <div class="modalWindow"></div>
+                <label for="slovakia">
+                    <select id="slovakia" class="country">
+                        <option value="bratislava">Bratislava</option>
+                        <option value="kosice">Košice</option>
+                    </select>
+                </label>
 
-        <input type="button" value="stlac" id="openBtn">
+                <label for="czech">
+                    <select id="czech" class="country">
+                        <option value="prague">Praha</option>
+                        <option value="brno">Brno</option>
+                    </select>
+                </label>
+
+                <label for="austria">
+                    <select id="austria" class="country">
+                        <option value="viena">Viedeň</option>
+                        <option value="graz">Graz</option>
+                    </select>
+                </label>
+
+                <label for="bratislava">
+                    <select id="bratislava" class="city">
+                        <option value="airportBA">Letisko Bratislava</option>
+                        <option value="patronska">Panónska cesta 3695/23</option>
+                    </select>
+                </label>
+
+                <label for="kosice">
+                    <select id="kosice" class="city">
+                        <option value="airportKE">Letisko Košice</option>
+                        <option value="ostrovskeho">Ostrovského 2333/1</option>
+                    </select>
+                </label>
+
+                <label for="prague">
+                    <select id="prague" class="city">
+                        <option value="airportPRA">Letisko Praha</option>
+                        <option value="vysehradska">Vyšehradská 1411</option>
+                    </select>
+                </label>
+
+                <label for="brno">
+                    <select id="brno" class="city">
+                        <option value="airportBR">Letisko Brno</option>
+                        <option value="mlynska">Mlýnská 333</option>
+                    </select>
+                </label>
+
+                <label for="viena">
+                    <select id="viena" class="city">
+                        <option value="airportSCH">Letisko Viedeň</option>
+                        <option value="landgutgasse">Landgutgasse 41</option>
+                    </select>
+                </label>
+
+                <label for="graz">
+                    <select id="graz" class="city">
+                        <option value="airportGR">Letisko Graz</option>
+                        <option value="bahnhofgurtel">Bahnhofgürtel 37</option>
+                    </select>
+                </label>
+                <br>
+                <label>
+                    Mám záujem o požičanie: <br>
+                    <input type="radio" class="vehicle" name="vehicle" value="aaa" checked="checked" id="opt1">aaa &nbsp;
+                    <input type="radio" class="vehicle" name="vehicle" value="bbb" id="opt2"> bbb&nbsp;
+                    <input type="radio" class="vehicle" name="vehicle" value="ccc" id="opt3"> ccc <br>
+                </label>
+
+                <div id="shelf1">
+
+                    <label>
+                        <input type="checkbox" name="box" value="b1">option1
+                        <input type="checkbox" name="box" value="b2">option2
+                        <input type="checkbox" name="box" value="b3" id="different">option3
+                    </label>
+                    <div id="differentTextArea">
+                        <label for="differentText"></label><textarea name="text1" placeholder="Tu zadajte text" id="differentText" maxlength="50"></textarea>
+                        <div id="diffTextCounter">0/50</div>
+                    </div>
+
+                </div>
+
+                <div id="shelf2">
+
+                    <label>
+                        <input type="checkbox" name="box" value="b4">option4
+                        <input type="checkbox" name="box" value="b5">option5
+                        <input type="checkbox" name="box" value="b6">option6
+                    </label>
+
+                </div>
+
+                <div class="modalWindow"></div>
+
+                <input type="button" value="potvrdiť" id="openBtn">
+            </div>
 
 
     </form>
