@@ -2,9 +2,8 @@ let gender = document.getElementsByName("gender");
 let vehicle = document.getElementsByName("vehicle");
 let options = document.getElementsByName("box");
 let different = document.getElementById('differentText');
-
-let vehicleArr = Array.from(vehicle);
 let optionsArr = Array.from(options);
+let vehiclePrice;
 
 
 function showRadio (element){
@@ -14,8 +13,30 @@ function showRadio (element){
     }
 }
 
+const priceArr = [10,10,0,10,3,3];
+
+function makePrice(){
+    for (let i = 0; i < options.length; i++) {
+        if (options[i].checked)
+            vehiclePrice= vehiclePrice + priceArr[i];
+    }
+
+    if (options[2].checked)
+        return vehiclePrice + " € + kalkulácia doplnkov";
+    else
+        return vehiclePrice + " €";
+}
 
 
+function countOptions(){
+
+    let sum = 0;
+    for (let i = 0; i < options.length; i++) {
+        if (options[i].checked)
+            sum++;
+    }
+    return sum;
+}
 
 function makeSum(element){
 
@@ -103,10 +124,16 @@ function makeSum(element){
         let optionsValue = Array(6);
         optionsLabel.innerHTML = "Doplnky";
         optionsRow.appendChild(optionsLabel);
-        console.log(vehicleArr.indexOf(showRadio(vehicle)))
-        console.log(vehicle);
-        console.log(vehicleArr);
+
+        if (countOptions()===0){
+            optionsValue[0] = document.createElement("td");
+            optionsValue[0].innerHTML = "žiadne";
+            optionsRow.appendChild(optionsValue[0]);
+        }
+
+
         if (vehicle[1].checked) {
+            vehiclePrice = 70;
             for (let i = 0; i < 3; i++) {
                 if (options[i].checked) {
                     optionsValue[i] = document.createElement("td");
@@ -119,6 +146,7 @@ function makeSum(element){
                 }
             }
         } else if (vehicle[2].checked) {
+            vehiclePrice = 35;
             for (let i = 3; i < 6; i++) {
                 if (options[i].checked) {
                     optionsValue[i] = document.createElement("td");
@@ -127,12 +155,18 @@ function makeSum(element){
                 }
             }
         }
+
+    }else {
+        vehiclePrice = 20;
     }
 
-
-
-
-
+    let sumRow = document.createElement("tr");
+    let sumLabel = document.createElement("td");
+    let sumValue = document.createElement("td");
+    sumLabel.innerHTML = "Výsledná cena";
+    sumValue.innerHTML = makePrice();
+    sumRow.appendChild(sumLabel);
+    sumRow.appendChild(sumValue);
 
 
     table.appendChild(nameRow);
@@ -144,6 +178,7 @@ function makeSum(element){
     table.appendChild(locationRow);
     table.appendChild(selectRow);
     table.appendChild(optionsRow);
+    table.appendChild(sumRow);
     element.appendChild(table);
 
 

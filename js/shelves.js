@@ -4,6 +4,7 @@ function show(name){
 
 function hide(name){
     document.getElementById(name).style.display = 'none';
+    options.forEach(function (element){element.checked = false})
 }
 
 function xor(element){
