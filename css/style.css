@@ -96,7 +96,7 @@ footer{
     min-width: 100px;
 }
 
-#czech, #austria, #kosice, #viena, #graz, #prague, #brno, #shelf1, #shelf2, #differentTextArea{
+#czech, #austria, #kosice, #viena, #graz, #prague, #brno, #shelf1, #shelf2, #differentTextArea, #optionsView, #addressView{
     display: none;
 }
 

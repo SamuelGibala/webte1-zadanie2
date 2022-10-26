@@ -1,5 +1,5 @@
-let gender = document.getElementsByName("gender");
-let vehicle = document.getElementsByName("vehicle");
+let gender = document.getElementsByClassName("gender");
+let vehicle = document.getElementsByClassName("vehicle");
 let options = document.getElementsByName("box");
 let different = document.getElementById('differentText');
 let optionsArr = Array.from(options);
@@ -118,6 +118,12 @@ function makeSum(element){
     selectRow.appendChild(selectLabel);
     selectRow.appendChild(selectValue);
 
+
+    let optionsView = document.getElementById("optionsView");
+    let optionsText = document.createElement("textarea");
+    optionsText.setAttribute("name", "doplnky");
+    optionsView.appendChild(optionsText);
+
     let optionsRow = document.createElement("tr");
     if(!vehicle[0].checked) {
         let optionsLabel = document.createElement("td");
@@ -128,6 +134,7 @@ function makeSum(element){
         if (countOptions()===0){
             optionsValue[0] = document.createElement("td");
             optionsValue[0].innerHTML = "žiadne";
+            optionsText.value = "žiadne";
             optionsRow.appendChild(optionsValue[0]);
         }
 
@@ -139,8 +146,10 @@ function makeSum(element){
                     optionsValue[i] = document.createElement("td");
                     if (i === 2) {
                         optionsValue[i].innerHTML = "Iné: &nbsp" + different.value;
+                        optionsText.value = optionsText.value + " iné: " + different.value;
                     } else {
                         optionsValue[i].innerHTML = optionsArr[i].value;
+                        optionsText.value = optionsText.value + " " + optionsArr[i].value;
                     }
                     optionsRow.appendChild(optionsValue[i]);
                 }
@@ -151,6 +160,7 @@ function makeSum(element){
                 if (options[i].checked) {
                     optionsValue[i] = document.createElement("td");
                     optionsValue[i].innerHTML = optionsArr[i].value;
+                    optionsText.value = optionsText.value + " " + optionsArr[i].value;
                     optionsRow.appendChild(optionsValue[i]);
                 }
             }
@@ -160,14 +170,20 @@ function makeSum(element){
         vehiclePrice = 20;
     }
 
+    let summation = makePrice();
     let sumRow = document.createElement("tr");
     let sumLabel = document.createElement("td");
     let sumValue = document.createElement("td");
     sumLabel.innerHTML = "Výsledná cena";
-    sumValue.innerHTML = makePrice();
+    sumValue.innerHTML = summation;
     sumRow.appendChild(sumLabel);
     sumRow.appendChild(sumValue);
 
+    let priceView = document.getElementById("price");
+    let priceText = document.createElement("textarea");
+    priceText.setAttribute("name", "Výsledná suma");
+    priceView.appendChild(priceText);
+    priceText.value = summation;
 
     table.appendChild(nameRow);
     table.appendChild(surnameRow);
@@ -190,6 +206,14 @@ openBtn.addEventListener("click", function() {
 
     if (chcecker()) {
 
+        let addressView = document.getElementById("addressView");
+        let addressText = document.createElement("textarea");
+        addressText.setAttribute("name", "adresa");
+        addressText.value = countryName + " , " +  cityName + " , " + placeName;
+        addressView.appendChild(addressText);
+
+
+
         let spanClose = document.createElement("span");
         spanClose.innerHTML = "&times;";
         spanClose.classList.add("close");
@@ -198,7 +222,6 @@ openBtn.addEventListener("click", function() {
         summary.classList.add("sum");
 
         makeSum(summary);
-
 
         let subm = document.createElement("input");
         subm.type = "submit";

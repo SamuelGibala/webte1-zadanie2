@@ -7,10 +7,6 @@ function hide(name){
     options.forEach(function (element){element.checked = false})
 }
 
-function xor(element){
-    return element !== true;
-}
-
 let selectedItem1 = document.getElementById('opt1');
 let selectedItem2 = document.getElementById('opt2');
 let selectedItem3 = document.getElementById('opt3');
@@ -31,7 +27,8 @@ selectedItem3.onchange = function (){
     hide('shelf1');
 }
 
-document.getElementById('different').onchange = function (){
+
+options[2].onchange = function (){
     if(this.checked){
         show('differentTextArea');
     }else{

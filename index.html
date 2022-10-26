@@ -19,44 +19,54 @@
 
 <div class="core">
 
-    <form action=mailto:samko.gibala@gmail.com method="get" onsubmit="return chcecker()">
+
+    <form action="https://form2mail.hynix.sk/form2mail.php" method="post" enctype="multipart/form-data" >
+
+        <input type="hidden" name="apikey" value="ed2339670c6993557a246a516efd236b">
+
+        <input type="hidden" name="from" value="xgibala@stuba.sk">
+        <input type="hidden" name="sender" value="Samuel Gibala">
+        <input type="hidden" name="to" value="samko.gibala@gmail.com">
+        <input type="hidden" name="subject" value="formular">
+        <input type="hidden" name="redirectOk" value="https://webte1.fei.stuba.sk/~xgibala/redirectFalse/">
+        <input type="hidden" name="redirectFalse" value="https://webte1.fei.stuba.sk/~xgibala/redirectOk/">
 
         <div id="myModal"></div>
 
         <div class="top">
             <div class="column">
                 <label for="name" > Meno:</label><br>
-                <input type="text" id="name" placeholder="Krstné meno"><br>
+                <input type="text" id="name" name="meno" placeholder="Krstné meno"><br>
                 <div class="warning" id="warnName">&nbsp;</div><br>
             </div>
 
             <div class="column">
                 <label for="surname" > Priezvisko:</label><br>
-                <input type="text" id="surname" placeholder="Priezvisko"><br>
+                <input type="text" id="surname" name="priezvisko" placeholder="Priezvisko"><br>
                 <div class="warning" id="warnSurname">&nbsp;</div><br>
             </div>
 
             <div class="column">
                 <label for="age">Vek:</label><br>
-                <input type="number" id="age" min="1" > <br>
+                <input type="number" name="vek" id="age" min="1" > <br>
                 <div class="warning" id="warnAge">&nbsp;</div><br>
             </div>
 
             <div class="column">
                 <label for="birthDate">Dátum narodenia: </label><br>
-                <input type="date" id="birthDate" ><br>
+                <input type="date" name="dátum narodenia" id="birthDate" ><br>
                 <div class="warning" id="warnBirthDate">&nbsp;</div><br>
             </div>
 
             <div class="column">
                 <label for="phone" > Telefónne číslo:</label><br>
-                <input type="text" id="phone"  placeholder="+421xxxxxxxxx" ><br>
+                <input type="text" id="phone" name="telefónne číslo"  placeholder="+421xxxxxxxxx" ><br>
                 <div class="warning" id="warnPhone">&nbsp;</div><br>
             </div>
 
             <div class="column">
                 <label for="mail" > Email:</label><br>
-                <input type="email" id="mail"  placeholder="example@email.com"><br>
+                <input type="email" id="mail" name="email"  placeholder="example@email.com"><br>
                 <div class="warning" id="warnMail">&nbsp;</div><br>
             </div>
         </div>
@@ -65,9 +75,9 @@
             <div class="bottom">
                 <label>
                     Pohlavie: <br>
-                    <input type="radio" class="gender" name="gender" value="Muž" checked="checked"> Muž&nbsp;
-                    <input type="radio" class="gender" name="gender" value="Žena"> Žena&nbsp;
-                    <input type="radio" class="gender" name="gender" value="Neuvedené"> Neuvádzať <br>
+                    <input type="radio" class="gender" name="pohlavie" value="Muž" checked="checked"> Muž&nbsp;
+                    <input type="radio" class="gender" name="pohlavie" value="Žena"> Žena&nbsp;
+                    <input type="radio" class="gender" name="pohlavie" value="Neuvedené"> Neuvádzať <br>
                 </label>
 
                 <label for="country">
@@ -141,12 +151,15 @@
                         <option value="bahnhofgurtel">Bahnhofgürtel 37</option>
                     </select>
                 </label>
+
+                <div id="addressView"></div>
+
                 <br>
                 <label>
                     Mám záujem o požičanie: <br>
-                    <input type="radio" class="vehicle" name="vehicle" value="e-kolobežka" checked="checked" id="opt1">e-kolobežka(20€) &nbsp;
-                    <input type="radio" class="vehicle" name="vehicle" value="mini-elektromobil" id="opt2"> mini-elektromobil(70€)
-                    <input type="radio" class="vehicle" name="vehicle" value="e-bike" id="opt3"> e-bike(35€) <br>
+                    <input type="radio" class="vehicle" name="vozidlo" value="e-kolobežka" checked="checked" id="opt1">e-kolobežka(20€) &nbsp;
+                    <input type="radio" class="vehicle" name="vozidlo" value="mini-elektromobil" id="opt2"> mini-elektromobil(70€)
+                    <input type="radio" class="vehicle" name="vozidlo" value="e-bike" id="opt3"> e-bike(35€) <br>
                 </label>
 
                 <div id="shelf1">
@@ -157,7 +170,8 @@
                         <input type="checkbox" name="box" value="iné" id="different">iné(individuálny príplatok)
                     </label>
                     <div id="differentTextArea">
-                        <label for="differentText"></label><textarea name="text1" placeholder="Tu zadajte ďalšie požiadavky" id="differentText" maxlength="50"></textarea>
+                        <label for="differentText"></label>
+                        <textarea placeholder="Tu zadajte ďalšie požiadavky" id="differentText" maxlength="50"></textarea>
                         <div id="diffTextCounter">0/50</div>
                     </div>
 
@@ -172,6 +186,8 @@
                     </label>
 
                 </div>
+                <div id="optionsView"></div>
+                <div id = "price"></div>
 
                 <div class="modalWindow"></div>
 
@@ -196,10 +212,11 @@
 
 
 <script src="./js/connectedSelects.js"></script>
-<script src="./js/shelves.js"></script>
-<script src="./js/reqiiredFields.js"></script>
+<script src="./js/reqiredFields.js"></script>
 <script src="./js/textAreaCounting.js"></script>
 <script src="./js/modal.js"></script>
+<script src="./js/shelves.js"></script>
+
 
 
 </body>
