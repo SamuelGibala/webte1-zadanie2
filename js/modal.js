@@ -1,6 +1,6 @@
 let gender = document.getElementsByClassName("gender");
 let vehicle = document.getElementsByClassName("vehicle");
-let options = document.getElementsByName("box");
+let options = document.getElementsByClassName("box");
 let different = document.getElementById('differentText');
 let optionsArr = Array.from(options);
 let vehiclePrice;
@@ -149,7 +149,7 @@ function makeSum(element){
                         optionsText.value = optionsText.value + " iné: " + different.value;
                     } else {
                         optionsValue[i].innerHTML = optionsArr[i].value;
-                        optionsText.value = optionsText.value + " " + optionsArr[i].value;
+                        optionsText.value = optionsText.value + optionsArr[i].value + " , ";
                     }
                     optionsRow.appendChild(optionsValue[i]);
                 }
@@ -160,7 +160,7 @@ function makeSum(element){
                 if (options[i].checked) {
                     optionsValue[i] = document.createElement("td");
                     optionsValue[i].innerHTML = optionsArr[i].value;
-                    optionsText.value = optionsText.value + " " + optionsArr[i].value;
+                    optionsText.value = optionsText.value + optionsArr[i].value + " , ";
                     optionsRow.appendChild(optionsValue[i]);
                 }
             }
