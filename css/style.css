@@ -68,7 +68,6 @@ input[type=button], input[type=submit]{
     margin: 20px 0 0 0;
     width: 20%;
     text-align: center;
-    horiz-align: center;
     font-size: large;
     min-width: 120px;
     padding: 5px;
@@ -96,7 +95,7 @@ footer{
     min-width: 100px;
 }
 
-#czech, #austria, #kosice, #viena, #graz, #prague, #brno, #shelf1, #shelf2, #differentTextArea, #optionsView, #addressView{
+#czech, #austria, #kosice, #viena, #graz, #prague, #brno, #shelf1, #shelf2, #differentTextArea, #optionsView, #addressView #priceView{
     display: none;
 }
 
